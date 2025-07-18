@@ -1,0 +1,45 @@
+{
+  "processing_timestamp": "2025-07-18T00:22:32.143469",
+  "source": "synthea",
+  "total_patients": 2705,
+  "demographics": {
+    "avg_age": 49.9,
+    "age_range": [
+      18,
+      100
+    ],
+    "gender_distribution": {
+      "f": 0.5060998151571164,
+      "m": 0.49390018484288356
+    }
+  },
+  "diagnoses": {
+    "total_unique_diagnoses": 10,
+    "avg_diagnoses_per_patient": 2.6,
+    "top_diagnoses": {
+      "DIABETES": 1390,
+      "TRAUMA": 1322,
+      "RESPIRATORY": 1296,
+      "HYPERTENSION": 733,
+      "SEPSIS": 616,
+      "CARDIOVASCULAR": 596,
+      "NEUROLOGICAL": 331,
+      "RENAL": 289,
+      "OTHER": 214,
+      "CANCER": 160
+    }
+  },
+  "icu_statistics": {
+    "icu_admission_rate": 60.6,
+    "avg_icu_los_days": 7.2,
+    "total_icu_patients": 1639
+  },
+  "outcomes": {
+    "mortality_rate": 13.7,
+    "avg_hospital_los": 9.5
+  },
+  "complexity": {
+    "high_complexity_patients": 1445,
+    "avg_comorbidity_score": 3.5
+  }
+}

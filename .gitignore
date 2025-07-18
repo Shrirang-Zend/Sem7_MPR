@@ -1,0 +1,170 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyc
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+*.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+*.env
+secrets.toml
+
+# Logs
+*.log
+*.log.*
+logs/
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+*.rdb
+
+# Testing
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/
+*.bak
+
+# Database
+*.sqlite3
+*.sqlite
+*.db
+
+# Streamlit
+.streamlit/
+.streamlit/cache/
+.streamlit/secrets.toml
+
+# Docker
+.dockerignore
+
+# Node.js (if any)
+node_modules/
+npm-debug.log
+yarn-error.log
+*.lock
+
+# iOS/Xcode (if any)
+*.xcodeproj/*
+*.xcworkspace/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+*.pbxproj
+*.xcworkspacedata
+*.xcuserstate
+*.xcsettings
+*.xcscheme
+DerivedData/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+xcuserdata/
+*.xccheckout
+*.moved-aside
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+Pods/
+Podfile.lock
+*.xcarchive
+*~.nib
+*.app
+*.framework
+*.bundle
+*.mobileprovision
+*.provisionprofile
+*.cer
+*.cert
+*.p12
+*.pem
+
+# Project-specific
+models/*.pkl  # Exclude CTGAN model file; adjust if you want to include it
+static/images/*.png  # Exclude images; adjust if you want to include specific images
+*.csv
+
+# Large data files (exclude to avoid GitHub size limits)
+data/raw/
+*.jar
+backend/data/raw/
+frontend/data/raw/
+# Large CSV files
+backend/data/raw/mimic-iii-clinical-database-demo-1.4/CHARTEVENTS.csv
+backend/data/raw/synthea/output_20250717_031937/csv/encounters.csv
+backend/data/raw/synthea/output_20250717_031937/csv/imaging_studies.csv
+backend/data/raw/synthea/output_20250717_031937/csv/observations.csv
+backend/data/raw/synthea/output_20250717_031937/csv/procedures.csv
+backend/data/raw/synthea/output_20250717_031937/csv/claims_transactions.csv
+backend/data/raw/synthea/output_20250717_031937/csv/claims.csv
+
+# Claude settings
+.claude/

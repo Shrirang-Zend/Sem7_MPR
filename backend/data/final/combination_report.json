@@ -1,0 +1,193 @@
+{
+  "generation_timestamp": "2025-07-18T00:25:05.344672",
+  "dataset_size": 2797,
+  "source_distribution": {
+    "synthea": 0.9671076153021094,
+    "mimic": 0.032892384697890596
+  },
+  "demographics": {
+    "age_statistics": {
+      "count": 2797.0,
+      "mean": 50.61673221308545,
+      "std": 19.867849681766344,
+      "min": 18.0,
+      "25%": 34.0,
+      "50%": 51.0,
+      "75%": 65.0,
+      "max": 100.0
+    },
+    "gender_distribution": {
+      "f": 0.5073292813728996,
+      "m": 0.4926707186271005
+    }
+  },
+  "diagnoses": {
+    "unique_diagnoses": 10,
+    "top_diagnoses": {
+      "DIABETES": 1424,
+      "RESPIRATORY": 1335,
+      "TRAUMA": 1334,
+      "HYPERTENSION": 783,
+      "CARDIOVASCULAR": 665,
+      "SEPSIS": 651,
+      "NEUROLOGICAL": 344,
+      "RENAL": 333,
+      "OTHER": 218,
+      "CANCER": 183
+    },
+    "top_combinations": {
+      "('OTHER',)": 218,
+      "('RESPIRATORY',)": 214,
+      "('TRAUMA',)": 159,
+      "('RESPIRATORY', 'TRAUMA')": 151,
+      "('DIABETES',)": 143,
+      "('DIABETES', 'RESPIRATORY')": 97,
+      "('DIABETES', 'TRAUMA')": 87,
+      "('DIABETES', 'RESPIRATORY', 'TRAUMA')": 68,
+      "('RESPIRATORY', 'SEPSIS')": 49,
+      "('NEUROLOGICAL', 'TRAUMA')": 41
+    }
+  },
+  "icu_outcomes": {
+    "icu_rate": 61.887736860922416,
+    "avg_icu_los": 7.149162333911034,
+    "mortality_rate": 16.553450125134074
+  },
+  "complexity": {
+    "high_complexity_rate": 54.37969252770826,
+    "avg_comorbidity_score": 3.494815874150876,
+    "avg_diagnoses_per_patient": 2.599213442974616
+  },
+  "validation": {
+    "total_patients": 2797,
+    "target_vs_actual": {
+      "('Diabetes',)": {
+        "target": 8.0,
+        "actual": 0.0,
+        "difference": 8.0
+      },
+      "('Cardiovascular',)": {
+        "target": 12.0,
+        "actual": 0.0,
+        "difference": 12.0
+      },
+      "('Hypertension',)": {
+        "target": 5.0,
+        "actual": 0.0,
+        "difference": 5.0
+      },
+      "('Respiratory',)": {
+        "target": 7.0,
+        "actual": 0.0,
+        "difference": 7.0
+      },
+      "('Renal',)": {
+        "target": 3.0,
+        "actual": 0.0,
+        "difference": 3.0
+      },
+      "('Sepsis',)": {
+        "target": 5.0,
+        "actual": 0.0,
+        "difference": 5.0
+      },
+      "('Diabetes', 'Hypertension')": {
+        "target": 9.0,
+        "actual": 0.0,
+        "difference": 9.0
+      },
+      "('Diabetes', 'Renal')": {
+        "target": 5.0,
+        "actual": 0.0,
+        "difference": 5.0
+      },
+      "('Diabetes', 'Cardiovascular')": {
+        "target": 6.0,
+        "actual": 0.0,
+        "difference": 6.0
+      },
+      "('Cardiovascular', 'Hypertension')": {
+        "target": 8.0,
+        "actual": 0.0,
+        "difference": 8.0
+      },
+      "('Hypertension', 'Renal')": {
+        "target": 4.0,
+        "actual": 0.0,
+        "difference": 4.0
+      },
+      "('Respiratory', 'Cardiovascular')": {
+        "target": 3.0,
+        "actual": 0.0,
+        "difference": 3.0
+      },
+      "('Diabetes', 'Hypertension', 'Renal')": {
+        "target": 6.0,
+        "actual": 0.0,
+        "difference": 6.0
+      },
+      "('Diabetes', 'Cardiovascular', 'Hypertension')": {
+        "target": 5.0,
+        "actual": 0.0,
+        "difference": 5.0
+      },
+      "('Cardiovascular', 'Hypertension', 'Renal')": {
+        "target": 3.0,
+        "actual": 0.0,
+        "difference": 3.0
+      },
+      "('Respiratory', 'Cardiovascular', 'Hypertension')": {
+        "target": 2.0,
+        "actual": 0.0,
+        "difference": 2.0
+      },
+      "('Sepsis', 'Cardiovascular')": {
+        "target": 2.0,
+        "actual": 0.0,
+        "difference": 2.0
+      },
+      "('Cancer', 'Sepsis')": {
+        "target": 2.0,
+        "actual": 0.0,
+        "difference": 2.0
+      },
+      "('Other',)": {
+        "target": 5.0,
+        "actual": 0.0,
+        "difference": 5.0
+      }
+    },
+    "distribution_quality": "needs_improvement",
+    "major_deviations": [
+      {
+        "combination": "('Diabetes',)",
+        "difference": 8.0
+      },
+      {
+        "combination": "('Cardiovascular',)",
+        "difference": 12.0
+      },
+      {
+        "combination": "('Respiratory',)",
+        "difference": 7.0
+      },
+      {
+        "combination": "('Diabetes', 'Hypertension')",
+        "difference": 9.0
+      },
+      {
+        "combination": "('Diabetes', 'Cardiovascular')",
+        "difference": 6.0
+      },
+      {
+        "combination": "('Cardiovascular', 'Hypertension')",
+        "difference": 8.0
+      },
+      {
+        "combination": "('Diabetes', 'Hypertension', 'Renal')",
+        "difference": 6.0
+      }
+    ],
+    "avg_deviation_pct": 5.3
+  }
+}

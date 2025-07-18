@@ -1,0 +1,45 @@
+{
+  "processing_timestamp": "2025-07-18T00:24:55.876812",
+  "source": "mimic",
+  "total_patients": 92,
+  "demographics": {
+    "avg_age": 70.5,
+    "age_range": [
+      19,
+      91
+    ],
+    "gender_distribution": {
+      "f": 0.5434782608695652,
+      "m": 0.45652173913043476
+    }
+  },
+  "diagnoses": {
+    "total_unique_diagnoses": 10,
+    "avg_diagnoses_per_patient": 3.5,
+    "top_diagnoses": {
+      "CARDIOVASCULAR": 69,
+      "HYPERTENSION": 50,
+      "RENAL": 44,
+      "RESPIRATORY": 39,
+      "SEPSIS": 35,
+      "DIABETES": 34,
+      "CANCER": 23,
+      "NEUROLOGICAL": 13,
+      "TRAUMA": 12,
+      "OTHER": 4
+    }
+  },
+  "icu_statistics": {
+    "icu_admission_rate": 100.0,
+    "avg_icu_los_days": 6.4,
+    "total_icu_patients": 92
+  },
+  "outcomes": {
+    "mortality_rate": 100.0,
+    "avg_hospital_los": 9.3
+  },
+  "complexity": {
+    "high_complexity_patients": 76,
+    "avg_comorbidity_score": 4.4
+  }
+}

@@ -1,0 +1,447 @@
+{
+  "model_type": "CTGAN",
+  "training_timestamp": "2025-07-18T16:16:40.791805",
+  "training_duration_seconds": 753.459153,
+  "model_parameters": {
+    "epochs": 800,
+    "batch_size": 250,
+    "generator_dim": [
+      1024,
+      512,
+      256
+    ],
+    "discriminator_dim": [
+      512,
+      256,
+      128
+    ],
+    "pac": 10,
+    "lr": 5e-05,
+    "decay": 1e-06
+  },
+  "training_columns": [
+    "age",
+    "gender",
+    "ethnicity",
+    "primary_diagnosis",
+    "has_diabetes",
+    "has_cardiovascular",
+    "has_hypertension",
+    "has_renal",
+    "has_respiratory",
+    "has_sepsis",
+    "has_neurological",
+    "has_trauma",
+    "has_cancer",
+    "has_other",
+    "num_diagnoses",
+    "comorbidity_score",
+    "hospital_los_days",
+    "icu_los_days",
+    "has_icu_stay",
+    "mortality",
+    "num_procedures",
+    "num_medications",
+    "risk_level",
+    "utilization_category",
+    "admission_type",
+    "insurance",
+    "age_group",
+    "emergency_admission",
+    "high_complexity"
+  ],
+  "random_seed": 42,
+  "model_file": "/Users/shrirangzend/Desktop/Mundane College Subjects/MPR/Sem7 MPR/Draft 2/backend/models/ctgan_healthcare_model.pkl",
+  "evaluation_results": {
+    "generation_timestamp": "2025-07-18T16:16:40.709467",
+    "num_synthetic_samples": 1000,
+    "original_samples": 2797,
+    "column_comparison": {
+      "age": {
+        "original_mean": 50.617,
+        "synthetic_mean": 48.401,
+        "original_std": 19.868,
+        "synthetic_std": 18.921,
+        "mean_difference": 2.216
+      },
+      "has_diabetes": {
+        "original_mean": 0.509,
+        "synthetic_mean": 0.49,
+        "original_std": 0.5,
+        "synthetic_std": 0.5,
+        "mean_difference": 0.019
+      },
+      "has_cardiovascular": {
+        "original_mean": 0.238,
+        "synthetic_mean": 0.249,
+        "original_std": 0.426,
+        "synthetic_std": 0.433,
+        "mean_difference": 0.011
+      },
+      "has_hypertension": {
+        "original_mean": 0.28,
+        "synthetic_mean": 0.285,
+        "original_std": 0.449,
+        "synthetic_std": 0.452,
+        "mean_difference": 0.005
+      },
+      "has_renal": {
+        "original_mean": 0.119,
+        "synthetic_mean": 0.143,
+        "original_std": 0.324,
+        "synthetic_std": 0.35,
+        "mean_difference": 0.024
+      },
+      "has_respiratory": {
+        "original_mean": 0.477,
+        "synthetic_mean": 0.376,
+        "original_std": 0.5,
+        "synthetic_std": 0.485,
+        "mean_difference": 0.101
+      },
+      "has_sepsis": {
+        "original_mean": 0.233,
+        "synthetic_mean": 0.331,
+        "original_std": 0.423,
+        "synthetic_std": 0.471,
+        "mean_difference": 0.098
+      },
+      "has_neurological": {
+        "original_mean": 0.123,
+        "synthetic_mean": 0.137,
+        "original_std": 0.328,
+        "synthetic_std": 0.344,
+        "mean_difference": 0.014
+      },
+      "has_trauma": {
+        "original_mean": 0.477,
+        "synthetic_mean": 0.489,
+        "original_std": 0.5,
+        "synthetic_std": 0.5,
+        "mean_difference": 0.012
+      },
+      "has_cancer": {
+        "original_mean": 0.065,
+        "synthetic_mean": 0.058,
+        "original_std": 0.247,
+        "synthetic_std": 0.234,
+        "mean_difference": 0.007
+      },
+      "has_other": {
+        "original_mean": 0.078,
+        "synthetic_mean": 0.079,
+        "original_std": 0.268,
+        "synthetic_std": 0.27,
+        "mean_difference": 0.001
+      },
+      "num_diagnoses": {
+        "original_mean": 2.599,
+        "synthetic_mean": 2.69,
+        "original_std": 1.54,
+        "synthetic_std": 1.603,
+        "mean_difference": 0.091
+      },
+      "comorbidity_score": {
+        "original_mean": 3.495,
+        "synthetic_mean": 3.575,
+        "original_std": 2.147,
+        "synthetic_std": 2.15,
+        "mean_difference": 0.08
+      },
+      "hospital_los_days": {
+        "original_mean": 9.454,
+        "synthetic_mean": 10.366,
+        "original_std": 7.346,
+        "synthetic_std": 8.563,
+        "mean_difference": 0.912
+      },
+      "icu_los_days": {
+        "original_mean": 4.424,
+        "synthetic_mean": 4.166,
+        "original_std": 5.628,
+        "synthetic_std": 4.916,
+        "mean_difference": 0.258
+      },
+      "has_icu_stay": {
+        "original_mean": 0.619,
+        "synthetic_mean": 0.611,
+        "original_std": 0.486,
+        "synthetic_std": 0.488,
+        "mean_difference": 0.008
+      },
+      "mortality": {
+        "original_mean": 0.166,
+        "synthetic_mean": 0.239,
+        "original_std": 0.372,
+        "synthetic_std": 0.427,
+        "mean_difference": 0.073
+      },
+      "num_procedures": {
+        "original_mean": 167.937,
+        "synthetic_mean": 185.89,
+        "original_std": 186.788,
+        "synthetic_std": 206.453,
+        "mean_difference": 17.953
+      },
+      "num_medications": {
+        "original_mean": 53.154,
+        "synthetic_mean": 48.198,
+        "original_std": 150.834,
+        "synthetic_std": 112.949,
+        "mean_difference": 4.956
+      },
+      "emergency_admission": {
+        "original_mean": 0.598,
+        "synthetic_mean": 0.612,
+        "original_std": 0.49,
+        "synthetic_std": 0.488,
+        "mean_difference": 0.014
+      },
+      "high_complexity": {
+        "original_mean": 0.544,
+        "synthetic_mean": 0.557,
+        "original_std": 0.498,
+        "synthetic_std": 0.497,
+        "mean_difference": 0.013
+      }
+    },
+    "distribution_similarity": {
+      "gender": {
+        "similarity_score": 0.932,
+        "original_categories": 2,
+        "synthetic_categories": 2
+      },
+      "ethnicity": {
+        "similarity_score": 0.935,
+        "original_categories": 11,
+        "synthetic_categories": 11
+      },
+      "primary_diagnosis": {
+        "similarity_score": 0.955,
+        "original_categories": 10,
+        "synthetic_categories": 10
+      },
+      "risk_level": {
+        "similarity_score": 0.959,
+        "original_categories": 4,
+        "synthetic_categories": 4
+      },
+      "utilization_category": {
+        "similarity_score": 0.951,
+        "original_categories": 3,
+        "synthetic_categories": 3
+      },
+      "admission_type": {
+        "similarity_score": 0.912,
+        "original_categories": 3,
+        "synthetic_categories": 3
+      },
+      "insurance": {
+        "similarity_score": 0.907,
+        "original_categories": 5,
+        "synthetic_categories": 5
+      },
+      "age_group": {
+        "similarity_score": 0.938,
+        "original_categories": 4,
+        "synthetic_categories": 4
+      }
+    },
+    "improved_results": {
+      "generation_timestamp": "2025-07-18T16:16:40.745839",
+      "num_synthetic_samples": 1000,
+      "original_samples": 2797,
+      "column_comparison": {
+        "age": {
+          "original_mean": 50.617,
+          "synthetic_mean": 55.897,
+          "original_std": 19.868,
+          "synthetic_std": 37.826,
+          "mean_difference": 5.28
+        },
+        "has_diabetes": {
+          "original_mean": 0.509,
+          "synthetic_mean": 0.527,
+          "original_std": 0.5,
+          "synthetic_std": 2.815,
+          "mean_difference": 0.018
+        },
+        "has_cardiovascular": {
+          "original_mean": 0.238,
+          "synthetic_mean": 0.11,
+          "original_std": 0.426,
+          "synthetic_std": 2.634,
+          "mean_difference": 0.128
+        },
+        "has_hypertension": {
+          "original_mean": 0.28,
+          "synthetic_mean": 0.272,
+          "original_std": 0.449,
+          "synthetic_std": 2.804,
+          "mean_difference": 0.008
+        },
+        "has_renal": {
+          "original_mean": 0.119,
+          "synthetic_mean": 0.263,
+          "original_std": 0.324,
+          "synthetic_std": 2.829,
+          "mean_difference": 0.144
+        },
+        "has_respiratory": {
+          "original_mean": 0.477,
+          "synthetic_mean": 0.294,
+          "original_std": 0.5,
+          "synthetic_std": 2.827,
+          "mean_difference": 0.183
+        },
+        "has_sepsis": {
+          "original_mean": 0.233,
+          "synthetic_mean": 0.315,
+          "original_std": 0.423,
+          "synthetic_std": 2.822,
+          "mean_difference": 0.082
+        },
+        "has_neurological": {
+          "original_mean": 0.123,
+          "synthetic_mean": 0.235,
+          "original_std": 0.328,
+          "synthetic_std": 2.715,
+          "mean_difference": 0.112
+        },
+        "has_trauma": {
+          "original_mean": 0.477,
+          "synthetic_mean": 0.376,
+          "original_std": 0.5,
+          "synthetic_std": 2.894,
+          "mean_difference": 0.101
+        },
+        "has_cancer": {
+          "original_mean": 0.065,
+          "synthetic_mean": 0.006,
+          "original_std": 0.247,
+          "synthetic_std": 2.829,
+          "mean_difference": 0.059
+        },
+        "has_other": {
+          "original_mean": 0.078,
+          "synthetic_mean": 0.143,
+          "original_std": 0.268,
+          "synthetic_std": 2.794,
+          "mean_difference": 0.065
+        },
+        "num_diagnoses": {
+          "original_mean": 2.599,
+          "synthetic_mean": 2.69,
+          "original_std": 1.54,
+          "synthetic_std": 1.603,
+          "mean_difference": 0.091
+        },
+        "comorbidity_score": {
+          "original_mean": 3.495,
+          "synthetic_mean": 5.274,
+          "original_std": 2.147,
+          "synthetic_std": 4.108,
+          "mean_difference": 1.779
+        },
+        "hospital_los_days": {
+          "original_mean": 9.454,
+          "synthetic_mean": 26.985,
+          "original_std": 7.346,
+          "synthetic_std": 27.821,
+          "mean_difference": 17.531
+        },
+        "icu_los_days": {
+          "original_mean": 4.424,
+          "synthetic_mean": 12.08,
+          "original_std": 5.628,
+          "synthetic_std": 13.348,
+          "mean_difference": 7.656
+        },
+        "has_icu_stay": {
+          "original_mean": 0.619,
+          "synthetic_mean": 0.611,
+          "original_std": 0.486,
+          "synthetic_std": 0.488,
+          "mean_difference": 0.008
+        },
+        "mortality": {
+          "original_mean": 0.166,
+          "synthetic_mean": 0.085,
+          "original_std": 0.372,
+          "synthetic_std": 0.279,
+          "mean_difference": 0.081
+        },
+        "num_procedures": {
+          "original_mean": 167.937,
+          "synthetic_mean": 768.562,
+          "original_std": 186.788,
+          "synthetic_std": 890.942,
+          "mean_difference": 600.624
+        },
+        "num_medications": {
+          "original_mean": 53.154,
+          "synthetic_mean": 204.465,
+          "original_std": 150.834,
+          "synthetic_std": 227.209,
+          "mean_difference": 151.311
+        },
+        "emergency_admission": {
+          "original_mean": 0.598,
+          "synthetic_mean": 0.638,
+          "original_std": 0.49,
+          "synthetic_std": 0.481,
+          "mean_difference": 0.04
+        },
+        "high_complexity": {
+          "original_mean": 0.544,
+          "synthetic_mean": 0.557,
+          "original_std": 0.498,
+          "synthetic_std": 0.497,
+          "mean_difference": 0.013
+        }
+      },
+      "distribution_similarity": {
+        "gender": {
+          "similarity_score": 0.932,
+          "original_categories": 2,
+          "synthetic_categories": 2
+        },
+        "ethnicity": {
+          "similarity_score": 0.935,
+          "original_categories": 11,
+          "synthetic_categories": 11
+        },
+        "primary_diagnosis": {
+          "similarity_score": 0.955,
+          "original_categories": 10,
+          "synthetic_categories": 10
+        },
+        "risk_level": {
+          "similarity_score": 0.959,
+          "original_categories": 4,
+          "synthetic_categories": 4
+        },
+        "utilization_category": {
+          "similarity_score": 0.951,
+          "original_categories": 3,
+          "synthetic_categories": 3
+        },
+        "admission_type": {
+          "similarity_score": 0.912,
+          "original_categories": 3,
+          "synthetic_categories": 3
+        },
+        "insurance": {
+          "similarity_score": 0.907,
+          "original_categories": 5,
+          "synthetic_categories": 5
+        },
+        "age_group": {
+          "similarity_score": 0.938,
+          "original_categories": 4,
+          "synthetic_categories": 4
+        }
+      }
+    }
+  }
+}

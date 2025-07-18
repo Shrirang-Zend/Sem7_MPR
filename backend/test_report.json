@@ -1,0 +1,30 @@
+{
+  "test_timestamp": "2025-07-18T10:51:25.113448",
+  "total_tests": 21,
+  "passed_tests": 21,
+  "failed_tests": 0,
+  "success_rate": 100.0,
+  "detailed_results": {
+    "final_dataset_exists": true,
+    "ctgan_model_exists": true,
+    "model_metadata_exists": true,
+    "validation_report_exists": true,
+    "combination_report_exists": true,
+    "data_dataset_not_empty": true,
+    "data_required_columns_present": true,
+    "data_no_duplicate_patients": true,
+    "data_age_in_valid_range": true,
+    "data_diagnoses_not_empty": true,
+    "data_icu_los_valid": true,
+    "model_loading": true,
+    "model_metadata_valid": true,
+    "model_generation": true,
+    "api__health": true,
+    "api__statistics": true,
+    "api__generate": true,
+    "integration_test_query_parsing": true,
+    "integration_test_data_filtering": true,
+    "integration_test_response_formatting": true,
+    "integration_test_error_handling": true
+  }
+}

@@ -1,0 +1,396 @@
+{
+  "evaluation_timestamp": "2025-07-18T16:18:02.677111",
+  "model_info": {
+    "original_samples": 2797,
+    "synthetic_samples": 2797,
+    "model_type": "CTGAN"
+  },
+  "overall_evaluation": {
+    "overall_score": 0.584,
+    "quality_rating": "Fair",
+    "statistical_similarity_score": 0.943,
+    "clinical_validity_score": 0.67,
+    "privacy_protection_score": 0.137
+  },
+  "detailed_results": {
+    "statistical_similarity": {
+      "numeric_distributions": {
+        "has_icu_stay": {
+          "ks_statistic": 0.014301036825169824,
+          "ks_p_value": 0.9373132960996472,
+          "similarity_score": 0.9856989631748302,
+          "original_stats": {
+            "mean": 0.6188773686092242,
+            "std": 0.48574945226751925,
+            "median": 1.0,
+            "min": 0.0,
+            "max": 1.0
+          },
+          "synthetic_stats": {
+            "mean": 0.6045763317840543,
+            "std": 0.48902892849166285,
+            "median": 1.0,
+            "min": 0.0,
+            "max": 1.0
+          },
+          "mean_difference": 0.01430103682516981,
+          "std_difference": 0.003279476224143596
+        },
+        "hospital_los_days": {
+          "ks_statistic": 0.09152663568108688,
+          "ks_p_value": 1.2963610510808422e-10,
+          "similarity_score": 0.9084733643189131,
+          "original_stats": {
+            "mean": 9.454415445119771,
+            "std": 7.3458215125536785,
+            "median": 7.7,
+            "min": 0.0,
+            "max": 42.6
+          },
+          "synthetic_stats": {
+            "mean": 10.714801573114052,
+            "std": 8.01178466807185,
+            "median": 8.9,
+            "min": 1.0,
+            "max": 46.5
+          },
+          "mean_difference": 1.2603861279942805,
+          "std_difference": 0.6659631555181722
+        },
+        "comorbidity_score": {
+          "ks_statistic": 0.040757954951734,
+          "ks_p_value": 0.019183271513937932,
+          "similarity_score": 0.959242045048266,
+          "original_stats": {
+            "mean": 3.494815874150876,
+            "std": 2.147058975098711,
+            "median": 3.0,
+            "min": 1.0,
+            "max": 10.0
+          },
+          "synthetic_stats": {
+            "mean": 3.650697175545227,
+            "std": 2.2516669346163987,
+            "median": 3.0,
+            "min": 1.0,
+            "max": 10.0
+          },
+          "mean_difference": 0.15588130139435075,
+          "std_difference": 0.10460795951768764
+        },
+        "mortality": {
+          "ks_statistic": 0.08473364318913121,
+          "ks_p_value": 3.7211847847481747e-09,
+          "similarity_score": 0.9152663568108688,
+          "original_stats": {
+            "mean": 0.16553450125134073,
+            "std": 0.37172871005236086,
+            "median": 0.0,
+            "min": 0.0,
+            "max": 1.0
+          },
+          "synthetic_stats": {
+            "mean": 0.2502681444404719,
+            "std": 0.43324485955444864,
+            "median": 0.0,
+            "min": 0.0,
+            "max": 1.0
+          },
+          "mean_difference": 0.08473364318913118,
+          "std_difference": 0.06151614950208778
+        },
+        "num_diagnoses": {
+          "ks_statistic": 0.03825527350732928,
+          "ks_p_value": 0.0333586397487504,
+          "similarity_score": 0.9617447264926707,
+          "original_stats": {
+            "mean": 2.599213442974616,
+            "std": 1.539619617196446,
+            "median": 2.0,
+            "min": 1.0,
+            "max": 8.0
+          },
+          "synthetic_stats": {
+            "mean": 2.7182695745441543,
+            "std": 1.6579884679700276,
+            "median": 2.0,
+            "min": 1.0,
+            "max": 8.0
+          },
+          "mean_difference": 0.11905613156953843,
+          "std_difference": 0.11836885077358161
+        },
+        "num_procedures": {
+          "ks_statistic": 0.10690025026814444,
+          "ks_p_value": 2.4861921986548898e-14,
+          "similarity_score": 0.8930997497318556,
+          "original_stats": {
+            "mean": 167.93743296388988,
+            "std": 186.7879824180651,
+            "median": 126.0,
+            "min": 0.0,
+            "max": 1948.0
+          },
+          "synthetic_stats": {
+            "mean": 187.81444404719343,
+            "std": 204.50823522499726,
+            "median": 143.0,
+            "min": -49.0,
+            "max": 1571.0
+          },
+          "mean_difference": 19.877011083303557,
+          "std_difference": 17.720252806932166
+        },
+        "age": {
+          "ks_statistic": 0.06185198426885949,
+          "ks_p_value": 4.4851076009234905e-05,
+          "similarity_score": 0.9381480157311405,
+          "original_stats": {
+            "mean": 50.61673221308545,
+            "std": 19.867849681766344,
+            "median": 51.0,
+            "min": 18.0,
+            "max": 100.0
+          },
+          "synthetic_stats": {
+            "mean": 48.765462996067214,
+            "std": 18.78260297288013,
+            "median": 48.0,
+            "min": 18.0,
+            "max": 100.0
+          },
+          "mean_difference": 1.8512692170182348,
+          "std_difference": 1.0852467088862134
+        },
+        "num_medications": {
+          "ks_statistic": 0.07794065069717554,
+          "ks_p_value": 8.236435608066263e-08,
+          "similarity_score": 0.9220593493028244,
+          "original_stats": {
+            "mean": 53.154451197711836,
+            "std": 150.8339327801491,
+            "median": 17.0,
+            "min": 0.0,
+            "max": 3419.0
+          },
+          "synthetic_stats": {
+            "mean": 51.439041830532716,
+            "std": 115.69435037983142,
+            "median": 17.0,
+            "min": -9.0,
+            "max": 977.0
+          },
+          "mean_difference": 1.7154093671791202,
+          "std_difference": 35.13958240031768
+        },
+        "high_complexity": {
+          "ks_statistic": 0.006435466571326421,
+          "ks_p_value": 0.9999999943075608,
+          "similarity_score": 0.9935645334286736,
+          "original_stats": {
+            "mean": 0.5437969252770826,
+            "std": 0.4981671975783294,
+            "median": 1.0,
+            "min": 0.0,
+            "max": 1.0
+          },
+          "synthetic_stats": {
+            "mean": 0.550232391848409,
+            "std": 0.4975592605826914,
+            "median": 1.0,
+            "min": 0.0,
+            "max": 1.0
+          },
+          "mean_difference": 0.006435466571326431,
+          "std_difference": 0.0006079369956379921
+        },
+        "emergency_admission": {
+          "ks_statistic": 0.015373614587057561,
+          "ks_p_value": 0.8957312570615231,
+          "similarity_score": 0.9846263854129425,
+          "original_stats": {
+            "mean": 0.5984983911333571,
+            "std": 0.49028972093934825,
+            "median": 1.0,
+            "min": 0.0,
+            "max": 1.0
+          },
+          "synthetic_stats": {
+            "mean": 0.6138720057204148,
+            "std": 0.48694757636091107,
+            "median": 1.0,
+            "min": 0.0,
+            "max": 1.0
+          },
+          "mean_difference": 0.01537361458705766,
+          "std_difference": 0.0033421445784371784
+        },
+        "icu_los_days": {
+          "ks_statistic": 0.08366106542724347,
+          "ks_p_value": 6.173921599097488e-09,
+          "similarity_score": 0.9163389345727565,
+          "original_stats": {
+            "mean": 4.424454772971041,
+            "std": 5.627933579127965,
+            "median": 2.5,
+            "min": 0.0,
+            "max": 48.6
+          },
+          "synthetic_stats": {
+            "mean": 4.210189488737933,
+            "std": 5.003936204548222,
+            "median": 2.5,
+            "min": 0.0,
+            "max": 30.0
+          },
+          "mean_difference": 0.21426528423310742,
+          "std_difference": 0.6239973745797425
+        }
+      },
+      "categorical_distributions": {
+        "ethnicity": {
+          "total_variation_distance": 0.05362888809438683,
+          "similarity_score": 0.9463711119056132,
+          "original_categories": 11,
+          "synthetic_categories": 11,
+          "common_categories": 11
+        },
+        "admission_type": {
+          "total_variation_distance": 0.09510189488737933,
+          "similarity_score": 0.9048981051126207,
+          "original_categories": 3,
+          "synthetic_categories": 3,
+          "common_categories": 3
+        },
+        "insurance": {
+          "total_variation_distance": 0.10117983553807651,
+          "similarity_score": 0.8988201644619235,
+          "original_categories": 5,
+          "synthetic_categories": 5,
+          "common_categories": 5
+        },
+        "age_group": {
+          "total_variation_distance": 0.07972828030032177,
+          "similarity_score": 0.9202717196996782,
+          "original_categories": 4,
+          "synthetic_categories": 4,
+          "common_categories": 4
+        },
+        "risk_level": {
+          "total_variation_distance": 0.030389703253485834,
+          "similarity_score": 0.9696102967465141,
+          "original_categories": 4,
+          "synthetic_categories": 4,
+          "common_categories": 4
+        },
+        "gender": {
+          "total_variation_distance": 0.07293528780836611,
+          "similarity_score": 0.9270647121916339,
+          "original_categories": 2,
+          "synthetic_categories": 2,
+          "common_categories": 2
+        },
+        "utilization_category": {
+          "total_variation_distance": 0.06435466571326423,
+          "similarity_score": 0.9356453342867358,
+          "original_categories": 3,
+          "synthetic_categories": 3,
+          "common_categories": 3
+        }
+      },
+      "correlation_analysis": {
+        "correlation_similarity": 0.8765546474507698,
+        "original_mean_correlation": 0.31130347494851823,
+        "synthetic_mean_correlation": 0.2676489160764611
+      },
+      "summary_statistics": {
+        "overall_numeric_similarity": 0.9434784021841583,
+        "overall_categorical_similarity": 0.9289544920578171,
+        "total_columns_evaluated": 18
+      }
+    },
+    "clinical_validity": {
+      "age_distribution": {
+        "original_mean_age": 50.61673221308545,
+        "synthetic_mean_age": 48.765462996067214,
+        "age_difference": 1.8512692170182348,
+        "original_age_range": [
+          18,
+          100
+        ],
+        "synthetic_age_range": [
+          18,
+          100
+        ],
+        "adults_only_original": true,
+        "adults_only_synthetic": true
+      },
+      "diagnosis_patterns": {
+        "diagnosis_distribution_similarity": 0.0,
+        "original_unique_diagnoses": 0,
+        "synthetic_unique_diagnoses": 0,
+        "common_diagnoses": 0,
+        "top_diagnoses_original": {},
+        "top_diagnoses_synthetic": {},
+        "note": "primary_diagnosis field not found in both datasets"
+      },
+      "clinical_logic": {
+        "icu_los_consistency": {
+          "icu_patients_have_los": false,
+          "non_icu_patients_zero_los": false
+        },
+        "hospital_icu_los_relationship": true,
+        "age_complexity_correlation": {
+          "correlation": 0.4847897878032965,
+          "positive_correlation": true
+        }
+      },
+      "mortality_patterns": {
+        "original_mortality_rate": 0.16553450125134073,
+        "synthetic_mortality_rate": 0.2502681444404719,
+        "mortality_rate_difference": 0.08473364318913118,
+        "realistic_mortality_range": true
+      },
+      "icu_patterns": {
+        "original_icu_rate": 0.6188773686092242,
+        "synthetic_icu_rate": 0.6045763317840543,
+        "icu_rate_difference": 0.01430103682516981,
+        "realistic_icu_range": false
+      }
+    },
+    "utility_preservation": {
+      "ml_utility": {
+        "error": "The feature names should match those that were passed during fit.\nFeature names seen at fit time, yet now missing:\n- has_cancer\n- has_cardiovascular\n- has_diabetes\n- has_hypertension\n- has_neurological\n- ...\n"
+      }
+    },
+    "privacy_protection": {
+      "distance_to_closest_record": {
+        "mean_min_distance": 1.368559910880237,
+        "median_min_distance": 1.1253490318509891,
+        "std_min_distance": 0.9497265255413385,
+        "privacy_score": 1.368559910880237
+      },
+      "membership_inference": {
+        "evaluated": false,
+        "note": "Advanced membership inference testing requires specialized tools"
+      },
+      "attribute_disclosure": {
+        "unique_combinations_original": "Too many to calculate",
+        "unique_combinations_synthetic": "Too many to calculate",
+        "note": "Lower unique combinations in synthetic data indicate better privacy protection"
+      }
+    },
+    "visualizations_path": "/Users/shrirangzend/Desktop/Mundane College Subjects/MPR/Sem7 MPR/Draft 2/backend/logs/evaluation_plots"
+  },
+  "recommendations": [
+    "Overall model performance needs improvement. Consider retraining with different parameters.",
+    "Clinical validity needs attention. Consider:",
+    "- Adding post-processing constraints",
+    "- Implementing clinical logic validation",
+    "- Reviewing feature engineering for clinical relationships",
+    "Privacy protection may be insufficient. Consider:",
+    "- Adding differential privacy mechanisms",
+    "- Implementing additional noise injection",
+    "- Reviewing distance-based privacy metrics"
+  ]
+}

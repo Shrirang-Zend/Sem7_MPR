@@ -1,0 +1,290 @@
+{
+  "validation_timestamp": "2025-07-18T09:05:20.904808",
+  "dataset_summary": {
+    "total_patients": 2797,
+    "data_sources": {
+      "synthea": 2705,
+      "mimic": 92
+    },
+    "file_size_mb": 1.8
+  },
+  "basic_structure": {
+    "total_patients": 2797,
+    "total_columns": 21,
+    "missing_columns": [],
+    "data_quality": {
+      "patient_id": {
+        "missing_count": 0,
+        "missing_percentage": 0.0
+      },
+      "age": {
+        "missing_count": 0,
+        "missing_percentage": 0.0
+      },
+      "gender": {
+        "missing_count": 0,
+        "missing_percentage": 0.0
+      },
+      "ethnicity": {
+        "missing_count": 0,
+        "missing_percentage": 0.0
+      },
+      "insurance": {
+        "missing_count": 0,
+        "missing_percentage": 0.0
+      },
+      "admission_type": {
+        "missing_count": 0,
+        "missing_percentage": 0.0
+      },
+      "diagnoses": {
+        "missing_count": 0,
+        "missing_percentage": 0.0
+      },
+      "num_diagnoses": {
+        "missing_count": 0,
+        "missing_percentage": 0.0
+      },
+      "num_procedures": {
+        "missing_count": 0,
+        "missing_percentage": 0.0
+      },
+      "num_medications": {
+        "missing_count": 0,
+        "missing_percentage": 0.0
+      },
+      "hospital_los_days": {
+        "missing_count": 0,
+        "missing_percentage": 0.0
+      },
+      "icu_los_days": {
+        "missing_count": 0,
+        "missing_percentage": 0.0
+      },
+      "has_icu_stay": {
+        "missing_count": 0,
+        "missing_percentage": 0.0
+      },
+      "mortality": {
+        "missing_count": 0,
+        "missing_percentage": 0.0
+      },
+      "emergency_admission": {
+        "missing_count": 0,
+        "missing_percentage": 0.0
+      },
+      "age_group": {
+        "missing_count": 0,
+        "missing_percentage": 0.0
+      },
+      "comorbidity_score": {
+        "missing_count": 0,
+        "missing_percentage": 0.0
+      },
+      "high_complexity": {
+        "missing_count": 0,
+        "missing_percentage": 0.0
+      },
+      "source": {
+        "missing_count": 0,
+        "missing_percentage": 0.0
+      },
+      "risk_level": {
+        "missing_count": 0,
+        "missing_percentage": 0.0
+      },
+      "utilization_category": {
+        "missing_count": 0,
+        "missing_percentage": 0.0
+      }
+    },
+    "overall_missing_percentage": 0.0
+  },
+  "clinical_patterns": {
+    "age_distribution": {
+      "min_age": 18,
+      "max_age": 100,
+      "mean_age": 50.6,
+      "adults_only": true
+    },
+    "clinical_logic_checks": {
+      "icu_los_consistency": true,
+      "hospital_icu_relationship": false,
+      "mortality_age_correlation": {
+        "0": 47.0497000856898,
+        "1": 68.59827213822894
+      },
+      "high_complexity_patients": 1521
+    },
+    "diagnosis_patterns": {
+      "unique_diagnoses": 10,
+      "top_diagnoses": {
+        "DIABETES": 1424,
+        "RESPIRATORY": 1335,
+        "TRAUMA": 1334,
+        "HYPERTENSION": 783,
+        "CARDIOVASCULAR": 665,
+        "SEPSIS": 651,
+        "NEUROLOGICAL": 344,
+        "RENAL": 333,
+        "OTHER": 218,
+        "CANCER": 183
+      },
+      "avg_diagnoses_per_patient": 2.6
+    }
+  },
+  "distribution_alignment": {
+    "target_vs_actual": {
+      "('Diabetes',)": {
+        "target_percentage": 8.0,
+        "actual_percentage": 0.0,
+        "difference": 8.0
+      },
+      "('Cardiovascular',)": {
+        "target_percentage": 12.0,
+        "actual_percentage": 0.0,
+        "difference": 12.0
+      },
+      "('Hypertension',)": {
+        "target_percentage": 5.0,
+        "actual_percentage": 0.0,
+        "difference": 5.0
+      },
+      "('Respiratory',)": {
+        "target_percentage": 7.0,
+        "actual_percentage": 0.0,
+        "difference": 7.0
+      },
+      "('Renal',)": {
+        "target_percentage": 3.0,
+        "actual_percentage": 0.0,
+        "difference": 3.0
+      },
+      "('Sepsis',)": {
+        "target_percentage": 5.0,
+        "actual_percentage": 0.0,
+        "difference": 5.0
+      },
+      "('Diabetes', 'Hypertension')": {
+        "target_percentage": 9.0,
+        "actual_percentage": 0.0,
+        "difference": 9.0
+      },
+      "('Diabetes', 'Renal')": {
+        "target_percentage": 5.0,
+        "actual_percentage": 0.0,
+        "difference": 5.0
+      },
+      "('Diabetes', 'Cardiovascular')": {
+        "target_percentage": 6.0,
+        "actual_percentage": 0.0,
+        "difference": 6.0
+      },
+      "('Cardiovascular', 'Hypertension')": {
+        "target_percentage": 8.0,
+        "actual_percentage": 0.0,
+        "difference": 8.0
+      },
+      "('Hypertension', 'Renal')": {
+        "target_percentage": 4.0,
+        "actual_percentage": 0.0,
+        "difference": 4.0
+      },
+      "('Respiratory', 'Cardiovascular')": {
+        "target_percentage": 3.0,
+        "actual_percentage": 0.0,
+        "difference": 3.0
+      },
+      "('Diabetes', 'Hypertension', 'Renal')": {
+        "target_percentage": 6.0,
+        "actual_percentage": 0.0,
+        "difference": 6.0
+      },
+      "('Diabetes', 'Cardiovascular', 'Hypertension')": {
+        "target_percentage": 5.0,
+        "actual_percentage": 0.0,
+        "difference": 5.0
+      },
+      "('Cardiovascular', 'Hypertension', 'Renal')": {
+        "target_percentage": 3.0,
+        "actual_percentage": 0.0,
+        "difference": 3.0
+      },
+      "('Respiratory', 'Cardiovascular', 'Hypertension')": {
+        "target_percentage": 2.0,
+        "actual_percentage": 0.0,
+        "difference": 2.0
+      },
+      "('Sepsis', 'Cardiovascular')": {
+        "target_percentage": 2.0,
+        "actual_percentage": 0.0,
+        "difference": 2.0
+      },
+      "('Cancer', 'Sepsis')": {
+        "target_percentage": 2.0,
+        "actual_percentage": 0.0,
+        "difference": 2.0
+      },
+      "('Other',)": {
+        "target_percentage": 5.0,
+        "actual_percentage": 0.0,
+        "difference": 5.0
+      }
+    },
+    "major_deviations": [
+      {
+        "combination": "('Diabetes',)",
+        "difference": 8.0
+      },
+      {
+        "combination": "('Cardiovascular',)",
+        "difference": 12.0
+      },
+      {
+        "combination": "('Respiratory',)",
+        "difference": 7.0
+      },
+      {
+        "combination": "('Diabetes', 'Hypertension')",
+        "difference": 9.0
+      },
+      {
+        "combination": "('Diabetes', 'Cardiovascular')",
+        "difference": 6.0
+      },
+      {
+        "combination": "('Cardiovascular', 'Hypertension')",
+        "difference": 8.0
+      },
+      {
+        "combination": "('Diabetes', 'Hypertension', 'Renal')",
+        "difference": 6.0
+      }
+    ],
+    "overall_alignment": {
+      "average_deviation_percentage": 5.3,
+      "quality_score": "needs_improvement"
+    }
+  },
+  "icu_patterns": {
+    "icu_statistics": {
+      "total_icu_patients": 1731,
+      "icu_admission_rate": 61.9,
+      "average_icu_los": 7.1,
+      "icu_mortality_rate": 22.2,
+      "non_icu_mortality_rate": 7.3
+    },
+    "complexity_patterns": {
+      "high_complexity_in_icu": 1310,
+      "avg_comorbidity_score_icu": 4.2,
+      "avg_comorbidity_score_non_icu": 2.4
+    }
+  },
+  "overall_quality": {
+    "status": "good",
+    "issues": [
+      "poor_distribution_alignment"
+    ],
+    "ready_for_production": true
+  }
+}
