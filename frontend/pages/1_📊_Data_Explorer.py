@@ -21,7 +21,7 @@ sys.path.insert(0, str(frontend_path))
 
 from components.api_client import APIClient
 from utils.data_processing import process_generated_data, create_visualizations
-from config.settings import API_CONFIG
+from backend.config.settings import API_CONFIG
 
 st.set_page_config(
     page_title="Data Explorer",
