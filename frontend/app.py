@@ -594,6 +594,16 @@ with tab2:
                 
                 if active_filters:
                     st.success(f"🎯 Active Filters: {' | '.join(active_filters)}")
+                    
+                    # Check for restrictive filter combinations
+                    has_young_age = st.session_state.age_range_override and st.session_state.age_range_override[1] <= 35
+                    has_high_risk = extracted_params.get("risk_level") == "high"
+                    has_high_complexity = extracted_params.get("complexity") == "high"
+                    
+                    if has_young_age and (has_high_risk or has_high_complexity):
+                        st.warning("⚠️ **Restrictive Filter Warning**: Young patients with high risk/complexity are rare in clinical data. You may receive fewer patients than requested. Consider widening age range or reducing filter constraints for larger datasets.")
+                    elif has_high_risk and has_high_complexity:
+                        st.info("ℹ️ **Filter Notice**: High-risk + high-complexity patients are uncommon. The system will generate as many matching patients as possible from the training data.")
                 else:
                     st.info("📊 No specific filters detected - generating general population data")
             

@@ -43,7 +43,7 @@ class HealthcareDataGenerator:
         logger.info(f"Generating {num_patients} synthetic patients")
         
         # Generate initial batch (potentially more than needed for filtering)
-        generation_multiplier = 2 if filters and self._has_restrictive_filters(filters) else 1
+        generation_multiplier = 5 if filters and self._has_restrictive_filters(filters) else 1
         initial_count = num_patients * generation_multiplier
         
         synthetic_df = self.ctgan_model.sample(initial_count)
@@ -57,8 +57,8 @@ class HealthcareDataGenerator:
             
             # Generate more if we don't have enough after filtering
             attempts = 0
-            while len(synthetic_df) < num_patients and attempts < 3:
-                additional_needed = (num_patients - len(synthetic_df)) * 2
+            while len(synthetic_df) < num_patients and attempts < 8:
+                additional_needed = (num_patients - len(synthetic_df)) * 3
                 additional_df = self.ctgan_model.sample(additional_needed)
                 additional_df = self._post_process_data(additional_df)
                 additional_filtered = self._apply_filters(additional_df, filters)
@@ -83,7 +83,9 @@ class HealthcareDataGenerator:
             filters.get('age_range') and (filters['age_range'][1] - filters['age_range'][0]) < 20,
             filters.get('mortality') is True,
             filters.get('icu_required') is True,
-            filters.get('complexity') == 'high'
+            filters.get('complexity') == 'high',
+            filters.get('risk_level') == 'high',
+            filters.get('risk_level') == 'critical'
         ]
         return any(restrictive_conditions)
     

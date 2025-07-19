@@ -244,6 +244,9 @@ def determine_risk_level(age: int, diagnoses: List[str], comorbidity_score: int)
     high_risk_conditions = ['SEPSIS', 'CANCER', 'NEUROLOGICAL', 'TRAUMA']
     medium_risk_conditions = ['CARDIOVASCULAR', 'RESPIRATORY', 'RENAL']
     
+    # Count high-risk conditions for young patients
+    high_risk_count = sum(1 for dx in diagnoses if dx in high_risk_conditions)
+    
     for dx in diagnoses:
         if dx in high_risk_conditions:
             risk_score += 3
@@ -251,6 +254,12 @@ def determine_risk_level(age: int, diagnoses: List[str], comorbidity_score: int)
             risk_score += 2
         else:
             risk_score += 1
+    
+    # Special boost for young patients with severe conditions
+    if age < 40 and high_risk_count >= 2:
+        risk_score += 2  # Boost young patients with multiple severe conditions
+    elif age < 40 and high_risk_count >= 1 and len(diagnoses) >= 3:
+        risk_score += 1  # Modest boost for young patients with 1+ severe + multiple conditions
     
     # Comorbidity contribution
     if comorbidity_score >= 7:

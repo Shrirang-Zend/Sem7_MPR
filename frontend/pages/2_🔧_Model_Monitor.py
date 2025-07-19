@@ -13,19 +13,33 @@ from datetime import datetime, timedelta
 import sys
 from pathlib import Path
 
-# Add backend path for importing config
-backend_path = Path(__file__).parent.parent.parent / "backend"
-sys.path.insert(0, str(backend_path))
-
 # Add frontend path for importing components
 frontend_path = Path(__file__).parent.parent
 sys.path.insert(0, str(frontend_path))
+
+# Add backend path for importing config - handle both local and container environments
+backend_path = Path(__file__).parent.parent.parent / "backend"
+if not backend_path.exists():
+    # Try container path structure
+    backend_path = Path("/app/backend")
+sys.path.insert(0, str(backend_path))
 
 # Define project root path
 project_root = Path(__file__).parent.parent.parent
 
 from components.api_client import APIClient
-from config.settings import API_CONFIG
+
+# Import API_CONFIG with fallback
+try:
+    from config.settings import API_CONFIG
+except ImportError:
+    # Fallback configuration for when config is not available
+    API_CONFIG = {
+        'host': 'localhost',
+        'port': 8000,
+        'max_generated_rows': 2000,
+        'timeout_seconds': 300
+    }
 
 st.set_page_config(
     page_title="Model Monitor",
@@ -33,8 +47,9 @@ st.set_page_config(
     layout="wide"
 )
 
-# Initialize API client
-API_BASE_URL = f"http://{API_CONFIG['host']}:{API_CONFIG['port']}"
+# Initialize API client - handle Docker environment
+# Use the same URL as the main app for consistency
+API_BASE_URL = "http://backend:8000"  # Docker service name
 api_client = APIClient(API_BASE_URL)
 
 st.title("🔧 CTGAN Model Monitor")
@@ -90,9 +105,9 @@ with tab1:
             st.write(f"Error: {health_status.get('message', 'Unknown')}")
     
     with col2:
-        # Test model availability
-        stats_response = api_client.get_statistics()
-        if "error" not in stats_response:
+        # Test model availability using system status
+        system_status = api_client.get_system_status()
+        if system_status.get("ctgan_model") == "ready":
             st.success("✅ Model: Available")
         else:
             st.error("❌ Model: Unavailable")
@@ -114,29 +129,44 @@ with tab1:
     if health_status.get("status") == "healthy":
         st.subheader("🖥️ System Metrics")
         
-        # Check if health endpoint provides system info
-        if "system_info" in health_status:
-            system_info = health_status["system_info"]
-            
-            col1, col2, col3, col4 = st.columns(4)
+        # Get system status instead of expecting it from health endpoint
+        system_status = api_client.get_system_status()
+        if not system_status.get("error"):
+            col1, col2, col3 = st.columns(3)
             
             with col1:
-                cpu_usage = system_info.get("cpu_usage", 0)
-                st.metric("CPU Usage", f"{cpu_usage:.1f}%")
+                articles_count = system_status.get("articles_indexed", 0)
+                st.metric("📄 Articles Indexed", f"{articles_count:,}")
             
             with col2:
-                memory_usage = system_info.get("memory_usage", 0)
-                st.metric("Memory Usage", f"{memory_usage:.1f}%")
+                queries_count = system_status.get("total_queries_processed", 0)
+                st.metric("🔍 Queries Processed", f"{queries_count:,}")
             
             with col3:
-                disk_usage = system_info.get("disk_usage", 0)
-                st.metric("Disk Usage", f"{disk_usage:.1f}%")
+                data_generated = system_status.get("total_data_generated", 0)
+                st.metric("📈 Data Generated", f"{data_generated:,}")
             
-            with col4:
-                uptime = system_info.get("uptime", "Unknown")
-                st.metric("Uptime", uptime)
+            # Service status overview
+            st.markdown("**🛠️ Service Status**")
+            col1, col2, col3 = st.columns(3)
+            
+            with col1:
+                rag_status = system_status.get("rag_system", "unknown")
+                rag_icon = "🟢" if rag_status == "ready" else "🔴"
+                st.metric("RAG System", f"{rag_icon} {rag_status.title()}")
+            
+            with col2:
+                ctgan_status = system_status.get("ctgan_model", "unknown")
+                ctgan_icon = "🟢" if ctgan_status == "ready" else "🔴"
+                st.metric("CTGAN Model", f"{ctgan_icon} {ctgan_status.title()}")
+            
+            with col3:
+                pubmed_status = system_status.get("pubmed_connection", "unknown")
+                pubmed_icon = "🟢" if pubmed_status == "ready" else "🔴"
+                st.metric("PubMed API", f"{pubmed_icon} {pubmed_status.title()}")
         else:
-            st.info("Detailed system metrics not available from API")
+            st.warning("⚠️ Could not load system metrics")
+            st.write(f"Error: {system_status.get('error', 'Unknown error')}")
 
 with tab2:
     st.header("📊 Model Statistics & Data Quality")

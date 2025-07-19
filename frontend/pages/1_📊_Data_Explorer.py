@@ -11,17 +11,31 @@ from datetime import datetime
 import sys
 from pathlib import Path
 
-# Add backend path for importing config
-backend_path = Path(__file__).parent.parent.parent / "backend"
-sys.path.insert(0, str(backend_path))
-
 # Add frontend path for importing components
 frontend_path = Path(__file__).parent.parent
 sys.path.insert(0, str(frontend_path))
 
+# Add backend path for importing config - handle both local and container environments
+backend_path = Path(__file__).parent.parent.parent / "backend"
+if not backend_path.exists():
+    # Try container path structure
+    backend_path = Path("/app/backend")
+sys.path.insert(0, str(backend_path))
+
 from components.api_client import APIClient
 from utils.data_processing import process_generated_data, create_visualizations
-from backend.config.settings import API_CONFIG
+
+# Import API_CONFIG with fallback
+try:
+    from config.settings import API_CONFIG
+except ImportError:
+    # Fallback configuration for when config is not available
+    API_CONFIG = {
+        'host': 'localhost',
+        'port': 8000,
+        'max_generated_rows': 2000,
+        'timeout_seconds': 300
+    }
 
 st.set_page_config(
     page_title="Data Explorer",
@@ -29,8 +43,9 @@ st.set_page_config(
     layout="wide"
 )
 
-# Initialize API client
-API_BASE_URL = f"http://{API_CONFIG['host']}:{API_CONFIG['port']}"
+# Initialize API client - handle Docker environment
+# Use the same URL as the main app for consistency
+API_BASE_URL = "http://backend:8000"  # Docker service name
 api_client = APIClient(API_BASE_URL)
 
 st.title("📊 Healthcare Data Explorer")
